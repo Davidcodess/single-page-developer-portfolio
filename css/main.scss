@@ -13,6 +13,8 @@ $Lineheight:3px;
     src: url('https://fonts.cdnfonts.com/css/space-grotesk');
 }
 
+
+
 body {
     background-color: $darkbody;
     font-style: $boldfont;
@@ -95,13 +97,15 @@ nav {
     justify-content: space-between;
 
         .skill-logo-container {
-            width: 130px;
+            width: 55px;
+            padding: 10px;
             margin: auto;
             margin-left: 10px;
             margin-right: 10px;
             margin-bottom: 20px;
             font-size: $Mediumfont;
             text-align: center;
+            animation: color-change 2.5s infinite;
             // background-color: $green;
 
             &:hover {
@@ -133,7 +137,7 @@ nav {
 }
 
 .project-main-container {
-    width: 90%;
+    width: 95%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -144,7 +148,7 @@ nav {
 
 
     .project-box {
-        width:300px;
+        width:100%;
         height: 300px;
         background:$green;
         border-radius: 10px;
@@ -155,3 +159,61 @@ nav {
        
     }
 }
+
+.footer-section {
+    background-color: #242424;
+    width: 100%;
+
+    footer {    
+        width: 80%;
+        margin: auto;
+        padding-top: 20px;
+
+        .contact-h4-container {
+            width: 90%;
+            margin: auto;
+            text-align: center;
+            margin-bottom: 50px;
+
+            .footer-p {
+                width: 85%;
+                margin: auto;
+            }
+        }
+      
+        h4 {
+            font-size: $Largefont;
+            font-weight: 700;
+            // animation: color-change 2.5s infinite;
+            
+        }
+
+    }
+
+    
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+    width: 70%;
+    padding-bottom: 50px;
+}
+
+
+@keyframes color-change {
+    0% { color:$lightbody; }
+    50% { color: $green; }
+    100% { color: $lightbody; }
+  } 
+
+  @keyframes fade-in {
+    0% { opacity:0;}
+    20% {opacity: 20%;}
+  }
+
+
+
+ 
