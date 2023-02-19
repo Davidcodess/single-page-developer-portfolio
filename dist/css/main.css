@@ -1,0 +1,122 @@
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("https://fonts.cdnfonts.com/css/space-grotesk");
+}
+body {
+  background-color: #151515;
+  font-style: "SpaceGrotesk-Bold";
+  font-family: "Space Grotesk";
+  color: white;
+}
+
+.main-body {
+  width: 80%;
+  margin: auto;
+}
+
+nav {
+  color: #151515;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.h1-container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: auto;
+  border-bottom-style: solid;
+  border-bottom-color: #d9d9d9;
+  border-bottom-width: 3px;
+  padding-bottom: 100px;
+}
+.h1-container h1 {
+  font-size: 3.75rem;
+  margin: auto;
+  text-align: center;
+}
+.h1-container b {
+  border-bottom-style: solid;
+  border-bottom-color: #4ee1a0;
+  border-bottom-width: 3px;
+}
+.h1-container .h1-container-p {
+  width: 60%;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 1.175rem;
+}
+.h1-container .contact-button {
+  width: 150px;
+  margin: auto;
+  background-color: #151515;
+  border-style: none;
+  border-bottom-style: solid;
+  border-bottom-color: #4ee1a0;
+  font-size: 1.175rem;
+}
+.h1-container a {
+  text-decoration: none;
+  color: white;
+}
+
+.skill-container {
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: auto;
+  margin-top: 50px;
+  justify-content: space-between;
+}
+.skill-container .skill-logo-container {
+  width: 130px;
+  margin: auto;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  font-size: 1.175rem;
+  text-align: center;
+}
+.skill-container .skill-logo-container:hover {
+  color: #4ee1a0;
+}
+.skill-container .skill-logo-container h3 {
+  margin: auto;
+  text-align: center;
+}
+.skill-container i {
+  font-size: 50px;
+  margin: auto;
+}
+
+.project-heading-container {
+  margin: auto;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 2rem;
+  border-top-style: solid;
+  border-top-color: #d9d9d9;
+  border-top-width: 3px;
+}
+
+.project-main-container {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.project-main-container .project-box {
+  width: 300px;
+  height: 300px;
+  background: #4ee1a0;
+  border-radius: 10px;
+  margin: auto;
+  margin-bottom: 15px;
+}/*# sourceMappingURL=main.css.map */
