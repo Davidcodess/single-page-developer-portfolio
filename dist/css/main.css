@@ -6,7 +6,8 @@ body {
   background-color: #151515;
   font-style: "SpaceGrotesk-Bold";
   font-family: "Space Grotesk";
-  color: white;
+  color: #ffffff;
+  margin: 0;
 }
 
 .main-body {
@@ -16,8 +17,46 @@ body {
 
 nav {
   color: #151515;
+  width: 100px;
   display: flex;
   margin-bottom: 20px;
+  background-color: #4ee1a0;
+  float: right;
+}
+
+.hamburger-navbar {
+  position: absolute;
+  top: 45px;
+  right: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50px;
+  height: 25px;
+}
+
+.bar {
+  height: 5px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+.rings {
+  position: absolute;
+  z-index: 9;
+  translate: 70%;
+  opacity: 1.5;
+  margin-top: 10px;
+}
+
+.rings-2 {
+  position: absolute;
+  z-index: 9;
+  translate: -70%;
+  opacity: 0.5;
+  margin-top: -55px;
 }
 
 .h1-container {
@@ -29,6 +68,8 @@ nav {
   border-bottom-color: #d9d9d9;
   border-bottom-width: 3px;
   padding-bottom: 100px;
+  padding-top: 100px;
+  position: relative;
 }
 .h1-container h1 {
   font-size: 3.75rem;
@@ -48,40 +89,47 @@ nav {
   text-align: center;
   font-size: 1.175rem;
 }
-.h1-container .contact-button {
-  width: 150px;
+
+.contact-button {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   margin: auto;
   background-color: #151515;
   border-style: none;
   border-bottom-style: solid;
   border-bottom-color: #4ee1a0;
   font-size: 1.175rem;
+  font-weight: 700;
 }
-.h1-container a {
+.contact-button:hover {
+  border-bottom-color: #ffffff;
+}
+
+a {
   text-decoration: none;
   color: white;
 }
+a:hover {
+  color: #4ee1a0;
+}
 
 .skill-container {
-  width: 75%;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   margin: auto;
   margin-top: 50px;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 .skill-container .skill-logo-container {
-  width: 55px;
-  padding: 10px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 20px;
   margin: auto;
-  margin-left: 10px;
-  margin-right: 10px;
   margin-bottom: 20px;
   font-size: 1.175rem;
   text-align: center;
-  -webkit-animation: color-change 2.5s infinite;
-          animation: color-change 2.5s infinite;
 }
 .skill-container .skill-logo-container:hover {
   color: #4ee1a0;
@@ -97,13 +145,14 @@ nav {
 
 .project-heading-container {
   margin: auto;
-  text-align: center;
-  margin-top: 50px;
   margin-bottom: 50px;
   font-size: 2rem;
   border-top-style: solid;
   border-top-color: #d9d9d9;
   border-top-width: 3px;
+}
+.project-heading-container h4 {
+  text-align: center;
 }
 
 .project-main-container {
@@ -116,12 +165,35 @@ nav {
   margin-bottom: 30px;
 }
 .project-main-container .project-box {
-  width: 100%;
-  height: 300px;
-  background: #4ee1a0;
+  display: flex;
+  flex-direction: column;
   border-radius: 10px;
   margin: auto;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
+}
+.project-main-container .project-box img {
+  width: 100%;
+}
+.project-main-container .project-box .project-name {
+  margin-bottom: -5px;
+  font-weight: 700;
+  font-size: 1.175rem;
+}
+.project-main-container .project-box .project-lang {
+  display: flex;
+  float: left;
+}
+.project-main-container .project-box .project-lang .language {
+  margin-right: 10px;
+}
+.project-main-container .project-box .project-button {
+  background-color: transparent;
+  color: #ffffff;
+  border-style: none;
+  border-bottom-style: solid;
+  border-bottom-color: #4ee1a0;
+  font-weight: 700;
+  margin-right: 20px;
 }
 
 .footer-section {
@@ -142,42 +214,95 @@ nav {
 .footer-section footer .contact-h4-container .footer-p {
   width: 85%;
   margin: auto;
+  padding-bottom: 20px;
 }
 .footer-section footer h4 {
   font-size: 2rem;
   font-weight: 700;
+}
+.footer-section footer .social-links {
+  padding-bottom: 10px;
 }
 
 form {
   display: flex;
   flex-direction: column;
   margin: auto;
-  text-align: center;
   width: 70%;
   padding-bottom: 50px;
 }
+form label {
+  float: left;
+  color: #d9d9d9;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+form input {
+  height: 20px;
+  background-color: transparent;
+  border-style: none;
+  border-bottom-style: solid;
+  border-bottom-color: #ffffff;
+  color: #ffffff;
+}
+form textarea {
+  background-color: transparent;
+  background-color: transparent;
+  border-style: none;
+  border-bottom-style: solid;
+  border-bottom-color: #ffffff;
+}
+form .submit {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  color: #ffffff;
+  border-bottom-color: #4ee1a0;
+}
 
-@-webkit-keyframes color-change {
+@-webkit-keyframes color-change-html {
   0% {
-    color: rgb(235, 225, 225);
+    color: #e34c26;
   }
   50% {
-    color: #4ee1a0;
+    color: #f06529;
   }
   100% {
-    color: rgb(235, 225, 225);
+    color: #ffffff;
   }
 }
 
-@keyframes color-change {
+@keyframes color-change-html {
   0% {
-    color: rgb(235, 225, 225);
+    color: #e34c26;
+  }
+  50% {
+    color: #f06529;
+  }
+  100% {
+    color: #ffffff;
+  }
+}
+@-webkit-keyframes color-change-css {
+  0% {
+    color: #ffffff;
   }
   50% {
     color: #4ee1a0;
   }
   100% {
-    color: rgb(235, 225, 225);
+    color: #ffffff;
+  }
+}
+@keyframes color-change-css {
+  0% {
+    color: #ffffff;
+  }
+  50% {
+    color: #4ee1a0;
+  }
+  100% {
+    color: #ffffff;
   }
 }
 @-webkit-keyframes fade-in {

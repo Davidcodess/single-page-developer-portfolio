@@ -1,8 +1,8 @@
 
 $green: #4ee1a0;
-$lightbody:rgb(235, 225, 225);
+$lightbody:#ffffff;
 $darkbody:#151515;
-$Grey:#d9d9d9;
+$grey:#d9d9d9;
 $boldfont:'SpaceGrotesk-Bold';
 $Mediumfont: 1.175rem;
 $Largefont:2rem;
@@ -19,7 +19,8 @@ body {
     background-color: $darkbody;
     font-style: $boldfont;
     font-family: 'Space Grotesk';
-    color: white;
+    color: $lightbody;
+    margin:0;
 }
 
 .main-body {
@@ -29,8 +30,46 @@ body {
 
 nav {
     color: $darkbody;
+    width:100px;
     display: flex;
     margin-bottom: 20px; 
+    background-color: #4ee1a0;
+    float: right;
+}
+
+.hamburger-navbar {
+    position: absolute;
+    top: 45px;
+    right:25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50px;
+    height: 25px;
+    
+}
+
+.bar {
+    height: 5px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    color: $lightbody;
+}
+.rings {
+    position: absolute;
+    z-index: 9;
+    translate:70%;
+    opacity: 1.5;
+    margin-top: 10px;
+}
+.rings-2 {
+    position: absolute;
+    z-index: 9;
+    translate:-70%;
+    opacity: .5;
+    margin-top: -55px;
+
 }
 
 .h1-container {
@@ -39,9 +78,11 @@ nav {
     width: 90%;
     margin: auto;
     border-bottom-style: solid;
-    border-bottom-color: $Grey;
+    border-bottom-color: $grey;
     border-bottom-width: $Lineheight;
     padding-bottom: 100px;
+    padding-top: 100px;
+    position: relative;
 
         h1 {
             font-size: 3.75rem;
@@ -66,46 +107,54 @@ nav {
 
         }
 
-        .contact-button {
-            width: 150px;
-            margin: auto;
-            background-color: $darkbody;
-            border-style: none;
-            border-bottom-style: solid;
-            border-bottom-color: $green;
-            font-size:$Mediumfont ;
+  
 
 
-        }
-            a {
-                text-decoration: none;
-                color: white;
-
-            }
-
-        
 }
 
+.contact-button {
+    width: max-content;
+    margin: auto;
+    background-color: $darkbody;
+    border-style: none;
+    border-bottom-style: solid;
+    border-bottom-color: $green;
+    font-size:$Mediumfont ;
+    font-weight: 700;
+
+    &:hover {
+        border-bottom-color: $lightbody;
+    }
+  
+
+
+}
+    a {
+        text-decoration: none;
+        color: white;
+
+        &:hover {
+            color:$green;
+            
+        }
+
+    }
 
 .skill-container {
-    width: 75%;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     margin: auto;
     margin-top: 50px;
-    justify-content: space-between;
+    justify-content: space-evenly;
 
         .skill-logo-container {
-            width: 55px;
-            padding: 10px;
+            width: max-content;
+            padding: 20px;
             margin: auto;
-            margin-left: 10px;
-            margin-right: 10px;
             margin-bottom: 20px;
             font-size: $Mediumfont;
             text-align: center;
-            animation: color-change 2.5s infinite;
+            
             // background-color: $green;
 
             &:hover {
@@ -127,13 +176,18 @@ nav {
 
 .project-heading-container {
     margin: auto;
-    text-align: center;
-    margin-top: 50px;
     margin-bottom: 50px;
     font-size: $Largefont;
     border-top-style: solid;
-    border-top-color: $Grey;
-    border-top-width:$Lineheight ;
+    border-top-color: $grey;
+    border-top-width:$Lineheight;
+
+        h4 {
+            //width: 50%;
+            text-align: center;
+        }
+
+      
 }
 
 .project-main-container {
@@ -148,12 +202,44 @@ nav {
 
 
     .project-box {
-        width:100%;
-        height: 300px;
-        background:$green;
+        display: flex;
+        flex-direction: column;
         border-radius: 10px;
         margin: auto;
-        margin-bottom: 15px;
+        margin-bottom: 30px;
+
+            img {
+                //width: 25rem;
+                width: 100%;
+            
+            }
+
+            .project-name {
+                margin-bottom: -5px;
+                font-weight: 700;
+                font-size: $Mediumfont;
+            }
+
+            .project-lang {
+                display: flex;
+                float: left ;
+
+                    .language {
+                        margin-right: 10px;
+                    }
+            }
+
+            .project-button {
+                background-color: transparent;
+                color: $lightbody;
+                border-style: none;
+                border-bottom-style: solid;
+                border-bottom-color: $green;
+                font-weight: 700;
+                margin-right: 20px;
+
+                
+            }
       
         
        
@@ -178,6 +264,7 @@ nav {
             .footer-p {
                 width: 85%;
                 margin: auto;
+                padding-bottom: 20px;
             }
         }
       
@@ -186,6 +273,10 @@ nav {
             font-weight: 700;
             // animation: color-change 2.5s infinite;
             
+        }
+
+        .social-links {
+            padding-bottom: 10px;
         }
 
     }
@@ -197,13 +288,49 @@ form {
     display: flex;
     flex-direction: column;
     margin: auto;
-    text-align: center;
     width: 70%;
     padding-bottom: 50px;
+
+        label {
+            float: left;
+            color: #d9d9d9;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        input {
+            height: 20px;
+            background-color: transparent;
+            border-style: none;
+            border-bottom-style: solid;
+            border-bottom-color: $lightbody;
+            color: $lightbody;
+        }
+
+        textarea {
+            background-color: transparent;
+            background-color: transparent;
+            border-style: none;
+            border-bottom-style: solid;
+            border-bottom-color: $lightbody;
+            
+        }
+
+        .submit {
+            width: max-content;
+            color: $lightbody;
+            border-bottom-color: $green;
+        }
 }
 
 
-@keyframes color-change {
+@keyframes color-change-html {
+    0% { color:#e34c26; }
+    50% { color: #f06529; }
+    100% { color: #ffffff; }
+  } 
+
+  @keyframes color-change-css {
     0% { color:$lightbody; }
     50% { color: $green; }
     100% { color: $lightbody; }
